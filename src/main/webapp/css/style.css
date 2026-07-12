@@ -1,63 +1,163 @@
+/* ==========================================
+   SMART LIBRARY MANAGEMENT SYSTEM
+   COMMON STYLE
+========================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     min-height:100vh;
-    background:
-        linear-gradient(rgba(15,23,42,0.65),rgba(15,23,42,0.65)),
-        url("../images/library-bg.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:30px;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    color:#ffffff;
+    line-height:1.6;
 }
 
-/* Form Container */
+/* ==========================
+   COMMON CONTAINER
+========================== */
+
 .container{
-    width:100%;
-    max-width:500px;
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+}
+
+h2{
+
+    font-size:32px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+h3{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   PARAGRAPH
+========================== */
+
+p{
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    opacity:.9;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
 
     background:rgba(255,255,255,.95);
 
-    padding:35px;
+    color:#111827;
 
     border-radius:18px;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.30);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
 }
 
-/* Heading */
-h1,h2,h3{
-    text-align:center;
-    color:#1f2937;
-    margin-bottom:25px;
-}
+/* ==========================
+   INPUTS
+========================== */
 
-/* Labels */
-label{
-    display:block;
-    font-weight:600;
-    margin-bottom:8px;
-    color:#374151;
-}
-
-/* Inputs */
 input,
-select{
+select,
+textarea{
+
     width:100%;
+
     padding:13px;
-    margin-bottom:18px;
 
     border:1px solid #d1d5db;
 
@@ -65,40 +165,226 @@ select{
 
     font-size:15px;
 
+    outline:none;
+
     transition:.3s;
+
 }
 
 input:focus,
-select:focus{
-    outline:none;
+select:focus,
+textarea:focus{
+
     border-color:#2563eb;
-    box-shadow:0 0 8px rgba(37,99,235,.3);
+
+    box-shadow:0 0 8px rgba(37,99,235,.25);
+
 }
 
-/* Submit Button */
+/* ==========================
+   SUBMIT BUTTON
+========================== */
+
 input[type="submit"]{
-    background:#16a34a;
-    color:#fff;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:600;
+
     border:none;
-    font-weight:bold;
+
     cursor:pointer;
+
+    transition:.3s;
+
 }
 
 input[type="submit"]:hover{
-    background:#15803d;
-}
 
-/* Links */
-a{
-    display:inline-block;
-    padding:10px 18px;
-    background:#2563eb;
-    color:#fff;
-    text-decoration:none;
-    border-radius:8px;
-    transition:.3s;
-}
-
-a:hover{
     background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   NORMAL BUTTON
+========================== */
+
+button{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ==========================
+   SUCCESS MESSAGE
+========================== */
+
+.success{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   ERROR MESSAGE
+========================== */
+
+.error{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   BACK BUTTON
+========================== */
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 25px;
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#1e293b;
+
+}
+
+/* ==========================
+   TABLE CONTAINER
+========================== */
+
+.table-container{
+
+    width:95%;
+
+    max-width:1300px;
+
+    margin:40px auto;
+
+    overflow-x:auto;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .container{
+
+        width:95%;
+
+    }
+
+    h1{
+
+        font-size:32px;
+
+    }
+
+    h2{
+
+        font-size:26px;
+
+    }
+
+    h3{
+
+        font-size:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+    h2{
+
+        font-size:22px;
+
+    }
+
+    input,
+    select,
+    textarea{
+
+        font-size:14px;
+
+    }
+
 }

@@ -1,87 +1,144 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+pageEncoding="UTF-8"%>
+
 <%@ page import="java.util.List"%>
 <%@ page import="com.library.dto.IssueBook"%>
 
 <%
-	List<IssueBook> issueBooks = (List<IssueBook>) request.getAttribute("issueBooks");
+List<IssueBook> issueBooks=(List<IssueBook>)request.getAttribute("issueBooks");
+
+String success=(String)session.getAttribute("success");
+String error=(String)session.getAttribute("error");
 %>
-
-
-<%
-	String success = (String) session.getAttribute("success");
-	if(success != null){
-%>
-
-	<p style="color:green;"><%=success%> </p>
-
-<%
-	session.removeAttribute("success");
-	}
-%>
-
-
-
-<%
-	String error = (String) session.getAttribute("error");
-	if(error != null){
-%>
-
-	<p style="color:red;"> <%=error%> </p>
-
-<%
-	session.removeAttribute("error");
-	}
-%>
-
-
-
-
 
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
-<title>View Issued Book</title>
+
+<title>Issued Books</title>
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/table.css">
 
 </head>
+
 <body>
-	<h2>Issued Books</h2>
 
-	<table border="1">
+	<div class="table-container">
 
-		<tr>
-			<th>Issue ID</th>
-			<th>Student Name</th>
-			<th>Roll No</th>
-			<th>Book Name</th>
-			<th>Issue Date</th>
-			<th>Return Date</th>
-			<th>Action</th>
-		</tr>
-
+		<h2>📚 Issued Books</h2>
 
 		<%
-		for (IssueBook issueBook : issueBooks) {
+		if (success != null) {
 		%>
-		<tr>
-			<td><%=issueBook.getIssueId()%></td>
-			<td><%=issueBook.getStudentName()%></td>
-			<td><%=issueBook.getRollNo()%></td>
-			<td><%=issueBook.getBookName()%></td>
-			<td><%=issueBook.getIssueDate()%></td>
-			<td><%=issueBook.getReturnDate()%></td>
-			<td><a href="returnBookForm?issueId=<%=issueBook.getIssueId()%>">Return</a></td>
-		</tr>
+
+		<div class="success">
+
+			<%=success%>
+
+		</div>
+
 		<%
+		session.removeAttribute("success");
 		}
 		%>
 
-	</table>                <br><br>
-	
-	<a href="loadAdminDashboard">Back to Dashboard</a>
+		<%
+		if (error != null) {
+		%>
+
+		<div class="error">
+
+			<%=error%>
+
+		</div>
+
+		<%
+		session.removeAttribute("error");
+		}
+		%>
+
+		<table>
+
+			<thead>
+
+				<tr>
+
+					<th>Issue ID</th>
+
+					<th>Student Name</th>
+
+					<th>Roll No</th>
+
+					<th>Book Name</th>
+
+					<th>Issue Date</th>
+
+					<th>Return Date</th>
+
+					<th>Action</th>
+
+				</tr>
+
+			</thead>
+
+			<tbody>
+
+				<%
+				if (issueBooks != null && !issueBooks.isEmpty()) {
+
+					for (IssueBook issueBook : issueBooks) {
+				%>
+
+				<tr>
+
+					<td><%=issueBook.getIssueId()%></td>
+
+					<td><%=issueBook.getStudentName()%></td>
+
+					<td><%=issueBook.getRollNo()%></td>
+
+					<td><%=issueBook.getBookName()%></td>
+
+					<td><%=issueBook.getIssueDate()%></td>
+
+					<td><%=issueBook.getReturnDate()%></td>
+
+					<td><a
+						href="returnBookForm?issueId=<%=issueBook.getIssueId()%>">
+
+							Return </a></td>
+
+				</tr>
+
+				<%
+				}
+
+				} else {
+				%>
+
+				<tr class="empty-row">
+
+					<td colspan="7">No Issued Books Found</td>
+
+				</tr>
+
+				<%
+				}
+				%>
+
+			</tbody>
+
+		</table>
+
+		<br> <a class="back-btn" href="loadAdminDashboard"> ⬅ Back to
+			Dashboard </a>
+
+	</div>
+
 </body>
+
 </html>

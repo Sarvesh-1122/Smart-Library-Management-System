@@ -1,59 +1,308 @@
+/* ==========================================
+   FORM CSS
+========================================== */
+
+/* Body */
+
 body{
-    margin:0;
-    padding:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f6f9;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:30px;
+
 }
+
+/* Form Container */
 
 .container{
-    width:450px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+
+    width:100%;
+
+    max-width:550px;
+
+    background:rgba(255,255,255,.96);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.30);
+
+    animation:fadeIn .5s ease;
+
 }
 
-h2{
+/* Heading */
+
+.container h1,
+.container h2,
+.container h3{
+
+    color:#1e3a8a;
+
     text-align:center;
-    color:#2c3e50;
+
     margin-bottom:25px;
+
 }
+
+/* Label */
 
 label{
-    font-weight:bold;
+
     display:block;
-    margin-top:15px;
+
+    margin-bottom:8px;
+
+    color:#374151;
+
+    font-weight:600;
+
 }
+
+/* Input */
 
 input,
-select{
+select,
+textarea{
+
     width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:4px;
-    box-sizing:border-box;
+
+    padding:13px;
+
+    margin-bottom:18px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:10px;
+
+    background:#ffffff;
+
+    transition:.3s;
+
 }
 
-input[type=submit]{
-    margin-top:20px;
-    background:#27ae60;
+/* Focus */
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 10px rgba(37,99,235,.25);
+
+}
+
+/* Submit */
+
+input[type="submit"]{
+
+    width:100%;
+
+    background:#2563eb;
+
     color:white;
+
     border:none;
+
+    padding:14px;
+
+    font-size:16px;
+
+    font-weight:600;
+
     cursor:pointer;
+
+    transition:.3s;
+
 }
 
-input[type=submit]:hover{
-    background:#219150;
+input[type="submit"]:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
 }
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.container a{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.container a:hover{
+
+    color:#1d4ed8;
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   SUCCESS
+========================================== */
 
 .success{
-    color:green;
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    border-radius:10px;
+
+    background:#dcfce7;
+
+    color:#166534;
+
     text-align:center;
+
+    font-weight:600;
+
 }
 
+/* ==========================================
+   ERROR
+========================================== */
+
 .error{
-    color:red;
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    border-radius:10px;
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
     text-align:center;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .container{
+
+        max-width:95%;
+
+        padding:25px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    input,
+    select,
+    textarea{
+
+        font-size:14px;
+
+    }
+
+    input[type="submit"]{
+
+        font-size:15px;
+
+    }
+
 }

@@ -1,28 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Search Book</title>
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/form.css">
 
 </head>
+
 <body>
 
-	<h2>Search Book</h2>
+	<div class="container">
 
-	<form action="searchBookForm" method="get">
+		<h1>📚 Smart Library</h1>
 
-		<label>Book Name</label> 
-		<input type="text" name="bookName" placeholder="Enter Book Name" required>   <br><br>
-		
-		<input type="submit" value="Search">
+		<h2>Search Book</h2>
 
-	</form>																				<br><br>
-	
-	<a href="loadAdminDashboard">Back to Dashboard</a>
+		<form action="searchBookForm" method="get">
+
+			<label>Book Name</label> <input type="text" name="bookName"
+				placeholder="Enter Book Name" required> <input type="submit"
+				value="Search Book">
+
+		</form>
+
+		<div class="form-footer">
+
+			<a class="back-btn" href="loadAdminDashboard"> ⬅ Back to
+				Dashboard </a>
+
+		</div>
+
+	</div>
 
 </body>
+
 </html>

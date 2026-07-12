@@ -1,50 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 
 <%@ page import="com.library.dto.User"%>
 
 <%
-User user = (User) session.getAttribute("user");
+User user=(User)session.getAttribute("user");
 
-if (user == null) {
-	response.sendRedirect("login.jsp");
-	return;
+if(user==null){
+    response.sendRedirect("login.jsp");
+    return;
 }
 
-if (!user.getRole().equalsIgnoreCase("Admin")) {
-	response.sendRedirect("studentDashboard.jsp");
-	return;
+if(!user.getRole().equalsIgnoreCase("ADMIN")){
+    response.sendRedirect("studentDashboard.jsp");
+    return;
 }
 %>
 
-
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Add Category</title>
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/form.css">
 
 </head>
+
 <body>
 
-	<div class="container">
+<div class="container">
 
-		<h2>Add New Category</h2>
+    <h1>📚 Smart Library</h1>
 
-		<form action="addCategory" method="post">
+    <h2>Add New Category</h2>
 
-			<label>Category Name</label> 
-			<input type="text" name="categoryName" placeholder="Enter Category Name" required> <br> <br>
-			
-			<input type="submit" value="Add Category">
+    <form action="addCategory" method="post">
 
-		</form><br> 
-		
-		<a href="loadAdminDashboard">⬅ Back to Dashboard</a>
+        <label>Category Name</label>
 
-	</div>
+        <input
+            type="text"
+            name="categoryName"
+            placeholder="Enter Category Name"
+            required>
+
+        <input
+            type="submit"
+            value="Add Category">
+
+    </form>
+
+    <div class="form-footer">
+
+        <a class="back-btn" href="loadAdminDashboard">
+
+            ⬅ Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
 
 </body>
+
 </html>

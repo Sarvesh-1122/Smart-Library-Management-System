@@ -1,62 +1,107 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    
-<%@page import="com.library.dto.User"%>
+pageEncoding="UTF-8"%>
+
+<%@ page import="com.library.dto.User"%>
 
 <%
-User user = (User) session.getAttribute("user");
+User user=(User)session.getAttribute("user");
 
-if(user == null){
+if(user==null){
     response.sendRedirect("login.jsp");
     return;
 }
+
+String success=(String)session.getAttribute("success");
+String error=(String)session.getAttribute("error");
 %>
 
-<% 
-	String success = (String) session.getAttribute("success"); 
-	String error = (String) session.getAttribute("error");
-%>
-    
-    
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Change Password</title>
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/form.css">
 
 </head>
+
 <body>
 
-	<h2>Change Password</h2>
-	<% if(success != null){ %>
-	<%= success %>
-	<% session.removeAttribute("success"); %>
-	<%} %>
-	
-	<% if(error != null){ %>
-    <%= error %>
-    <% session.removeAttribute("error"); %>
-    <%} %>
-	
-	<form action="changePassword" method="post">
+<div class="container">
 
-	    <label>Current Password</label><br>
-	    <input type="password" name="currentPassword" required>  <br><br>
-	
-	    <label>New Password</label><br>
-	    <input type="password" name="newPassword" required>   <br><br>
-	
-	    <label>Confirm Password</label><br>
-	    <input type="password" name="confirmPassword" required>    <br><br>
-	
-	    <input type="submit" value="Change Password">
+    <h1>📚 Smart Library</h1>
 
-     </form>                                                      <br><br>
+    <h2>Change Password</h2>
 
-	<a href="studentDashboard.jsp">Back to Dashboard</a>
+    <% if(success!=null){ %>
+
+        <div class="success">
+
+            <%=success%>
+
+        </div>
+
+    <% session.removeAttribute("success"); } %>
+
+    <% if(error!=null){ %>
+
+        <div class="error">
+
+            <%=error%>
+
+        </div>
+
+    <% session.removeAttribute("error"); } %>
+
+    <form action="changePassword" method="post">
+
+        <label>Current Password</label>
+
+        <input
+            type="password"
+            name="currentPassword"
+            placeholder="Enter Current Password"
+            required>
+
+        <label>New Password</label>
+
+        <input
+            type="password"
+            name="newPassword"
+            placeholder="Enter New Password"
+            required>
+
+        <label>Confirm Password</label>
+
+        <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm New Password"
+            required>
+
+        <input
+            type="submit"
+            value="Change Password">
+
+    </form>
+
+    <div class="form-footer">
+
+        <a class="back-btn"
+           href="studentDashboard.jsp">
+
+            ⬅ Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
 
 </body>
+
 </html>

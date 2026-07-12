@@ -1,17 +1,252 @@
-.container{
-	width:80%;
-	margin:auto;
-	background:white;
-	padding:25px;
-	border-radius:10px;
-	box-shadow:0px 0px 10px lightgray;
+/* ==========================================
+   DASHBOARD CSS
+========================================== */
+
+/* Dashboard */
+
+.dashboard{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:40px auto;
+
 }
 
-.menu{
-	margin-top:20px;
+/* Header */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
 }
 
-.menu a{
-	display:block;
-	margin-bottom:10px;
+.header h1{
+
+    color:#ffffff;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.header h2{
+
+    color:#dbeafe;
+
+    font-size:24px;
+
+    font-weight:400;
+
+}
+
+/* Statistics Cards */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-bottom:45px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.card h3{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#111827;
+
+    font-size:36px;
+
+    font-weight:bold;
+
+}
+
+/* Action Buttons */
+
+.actions{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.actions a{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:60px;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+}
+
+.actions a:hover{
+
+    background:linear-gradient(135deg,#1d4ed8,#1e40af);
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.30);
+
+}
+
+/* ==========================================
+   LOGOUT BUTTON
+========================================== */
+
+.actions a:last-child{
+
+    background:linear-gradient(135deg,#dc2626,#b91c1c);
+
+}
+
+.actions a:last-child:hover{
+
+    background:linear-gradient(135deg,#b91c1c,#991b1b);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .dashboard{
+
+        width:95%;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .actions{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .header h1{
+
+        font-size:32px;
+
+    }
+
+    .header h2{
+
+        font-size:20px;
+
+    }
+
+    .card p{
+
+        font-size:28px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .header h1{
+
+        font-size:28px;
+
+    }
+
+    .header h2{
+
+        font-size:18px;
+
+    }
+
+    .actions a{
+
+        height:55px;
+
+        font-size:15px;
+
+    }
+
 }
