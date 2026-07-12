@@ -1,0 +1,25 @@
+table{
+	width:100%;
+	border-collapse:collapse;
+	background:white;
+}
+
+table th{
+	background:#2c3e50;
+	color:white;
+	padding:12px;
+}
+
+table td{
+	padding:10px;
+	text-align:center;
+	border:1px solid #ddd;
+}
+
+table tr:nth-child(even){
+	background:#f2f2f2;
+}
+
+table tr:hover{
+	background:#eaf2f8;
+}
