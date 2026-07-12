@@ -1,4 +1,53 @@
-# 📚 Smart Library Management System
+## 📸 Project Screenshots
+
+### Login Page
+
+![Login](screenshots/login.jpeg)
+
+
+<br><br>
+
+
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.jpeg)
+
+
+
+<br><br>
+
+
+
+### Add Book
+
+![Add Book](screenshots/add-book.jpeg)
+
+
+<br><br>
+
+
+
+
+### Issue Book
+
+![Issue Book](screenshots/issue-book.jpeg)
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+📚 Smart Library Management System
+
 
 A Java Full Stack Library Management System developed using JSP, Servlets, JDBC, MySQL, HTML, CSS, and JavaScript.
 
@@ -66,25 +115,7 @@ Smart-Library-Management-System
 
 ---
 
-## 📸 Project Screenshots
 
-### Login Page
-
-(Add Screenshot Here)
-
-### Admin Dashboard
-
-(Add Screenshot Here)
-
-### Add Book
-
-(Add Screenshot Here)
-
-### Issue Book
-
-(Add Screenshot Here)
-
----
 
 ## 💻 Installation
 
@@ -114,7 +145,19 @@ https://github.com/Sarvesh-1122
 
 LinkedIn
 
-(Add Your LinkedIn Profile)
+https://www.linkedin.com/in/sarvesh-yadav-131b46317/
+
+LeetCode
+
+https://leetcode.com/u/Sarvesh_Coder/
+
+Hackerrank
+
+https://www.hackerrank.com/profile/sarveshyadav_211
+
+codechef
+
+https://www.codechef.com/users/sarvesh888708
 
 ---
 
